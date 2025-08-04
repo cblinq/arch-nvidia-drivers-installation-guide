@@ -27,7 +27,7 @@ This is a quick tutorial on how you can install proprietary NVIDIA drivers for A
    - Uncomment the following lines by removing the # -character at the start them
      - **[multilib]**
      - **Include = /etc/pacman.d/mirrorlist**
-   - Save the file with _CTRL+S_ and close nano with _CTRL+X_
+   - Save the file with _CTRL+O_ and close nano with _CTRL+X_
 5. Run `yay -Syu`, to update the system package database
 
 ## Step 2: Installing the driver packages
@@ -105,3 +105,4 @@ Setting the kernel parameter depends on what bootloader you are using. Complete 
 ## Step 4: Reboot and enjoy!
 
 You can now safely reboot and enjoy the proprietary NVIDIA drivers. If you have any problems check the Arch Linux Wiki or the forums for common pitfalls and questions.
+
