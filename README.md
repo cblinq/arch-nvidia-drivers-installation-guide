@@ -16,19 +16,20 @@ This is a quick tutorial on how you can install proprietary NVIDIA drivers for A
 1. Update the system:
    `sudo pacman -Syu`
 2. Install required packages:
-   `sudo pacman -S base-devel linux-headers git nano --needed`
-3. Install the AUR helper, yay
+   `sudo pacman -S rustup base-devel linux-headers git nano --needed`
+3. Install the AUR helper, paru
+   - `rustup default stable`
    - `cd ~`
-   - `git clone https://aur.archlinux.org/yay.git`
-   - `cd yay`
+   - `git clone https://aur.archlinux.org/paru.git`
+   - `cd paru`
    - `makepkg -si`
-4. Enable multilib repository
+5. Enable multilib repository
    - `sudo nano /etc/pacman.conf`
    - Uncomment the following lines by removing the # -character at the start them
      - **[multilib]**
      - **Include = /etc/pacman.d/mirrorlist**
    - Save the file with _CTRL+O_ and close nano with _CTRL+X_
-5. Run `yay -Syu`, to update the system package database
+6. Run `paru -Syu`, to update the system package database
 
 ## Step 2: Installing the driver packages
 
@@ -47,8 +48,8 @@ This is a quick tutorial on how you can install proprietary NVIDIA drivers for A
 | Tesla (NV50/G80-90-GT2XX)                               | any                         | nvidia-340xx-dkms      | nvidia-340xx-utils | lib32-nvidia-340xx-utils |
 
 3. Install the correct Base driver, OpenGL, and OpenGL (multilib) packages
-   - Example: `yay -S nvidia-470xx-dkms nvidia-470xx-utils lib32-nvidia-470xx-utils`
-4. Install nvidia-settings with `yay -S nvidia-settings`
+   - Example: `paru -S nvidia-470xx-dkms nvidia-470xx-utils lib32-nvidia-470xx-utils`
+4. Install nvidia-settings with `paru -S nvidia-settings`
 
 ## Step 3: Enabling DRM kernel mode setting
 
@@ -99,10 +100,11 @@ Setting the kernel parameter depends on what bootloader you are using. Complete 
 3. Find the line that says **Target=nvidia**.
 4. Replace the word **nvidia** with the base driver you installed, e.g., **nvidia-470xx-dkms**
    - The edited line should look something like this: **Target=nvidia-470xx-dkms**
-5. Save the file with _CTRL+S_ and close nano with _CTRL+X_
+5. Save the file with _CTRL+O_ and close nano with _CTRL+X_
 6. Move the file to **/etc/pacman.d/hooks/** with: `sudo mkdir -p /etc/pacman.d/hooks/ && sudo mv ./nvidia.hook /etc/pacman.d/hooks/`
 
 ## Step 4: Reboot and enjoy!
 
 You can now safely reboot and enjoy the proprietary NVIDIA drivers. If you have any problems check the Arch Linux Wiki or the forums for common pitfalls and questions.
+
 
