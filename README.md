@@ -31,6 +31,8 @@ This is a quick tutorial on how you can install proprietary NVIDIA drivers for A
    - Save the file with _CTRL+O_ and close nano with _CTRL+X_
 6. Run `paru -Syu`, to update the system package database
 
+### Note: The most recent drivers do not require an AUR helper, the drivers are found in the official Arch Linux repositories.
+
 ## Step 2: Installing the driver packages
 
 1. First find your [NVIDIA card from this list here](https://nouveau.freedesktop.org/CodeNames.html). Alternatively you can take a look at the [Gentoo wiki](https://wiki.gentoo.org/wiki/NVIDIA#Feature_support).
@@ -49,7 +51,7 @@ This is a quick tutorial on how you can install proprietary NVIDIA drivers for A
 
 3. Install the correct Base driver, OpenGL, and OpenGL (multilib) packages
    - Example: `paru -S nvidia-470xx-dkms nvidia-470xx-utils lib32-nvidia-470xx-utils`
-4. Install nvidia-settings with `paru -S nvidia-settings`
+4. Install nvidia-settings with `paru -S nvidia-settings` (optional)
 
 ## Step 3: Enabling DRM kernel mode setting
 
@@ -106,5 +108,6 @@ Setting the kernel parameter depends on what bootloader you are using. Complete 
 ## Step 4: Reboot and enjoy!
 
 You can now safely reboot and enjoy the proprietary NVIDIA drivers. If you have any problems check the Arch Linux Wiki or the forums for common pitfalls and questions.
+
 
 
