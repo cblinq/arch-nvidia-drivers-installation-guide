@@ -29,7 +29,7 @@ This is a quick tutorial on how you can install proprietary NVIDIA drivers for A
      - **[multilib]**
      - **Include = /etc/pacman.d/mirrorlist**
    - Save the file with _CTRL+O_ and close nano with _CTRL+X_
-6. Run `paru -Syu`, to update the system package database
+6. Run `paru`, to update the system package database
 
 ### Note: The most recent drivers do not require an AUR helper, the drivers are found in the official Arch Linux repositories.
 
@@ -108,6 +108,7 @@ Setting the kernel parameter depends on what bootloader you are using. Complete 
 ## Step 4: Reboot and enjoy!
 
 You can now safely reboot and enjoy the proprietary NVIDIA drivers. If you have any problems check the Arch Linux Wiki or the forums for common pitfalls and questions.
+
 
 
 
